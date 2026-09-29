@@ -1,0 +1,24 @@
+data:
+  path: "data/sample_queries.csv"
+  test_size: 0.15
+  val_size: 0.15
+  random_seed: 42
+  intent_labels: ["navigational", "informational", "transactional"]
+
+model:
+  pretrained: "distilbert-base-uncased"
+  max_length: 64
+  session_feature_dim: 8
+  session_projection_dim: 32
+  hidden_dim: 256
+  dropout: 0.3
+  learning_rate: 0.00002
+  weight_decay: 0.01
+  batch_size: 32
+  epochs: 5
+  patience: 2
+  warmup_ratio: 0.1
+
+output:
+  model_dir: "models/saved"
+  results_dir: "results"
